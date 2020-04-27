@@ -1,23 +1,46 @@
 <!DOCTYPE HTML>
 <html>
+<head>
+        <meta charset="utf-8">
+        <!-- Nous chargeons les fichiers CDN de Leaflet. Le CSS AVANT le JS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+        <style type="text/css">
+            #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+                height:400px;
+            }
+        </style>
+        <title>Carte</title>
+</head>
 <body>
 Crétin de Touc.
-
 <br/>
+
+
+<div id="map">
+	    <!-- Ici s'affichera la carte -->
+</div>
+
 
 <input type="button" id="bouton" onclick="
 		alert('bouton cliqué !'+navigator.geolocation);
-		navigator.geolocation.getCurrentPosition(succes,echec,{maximumAge:100000,timeout: 10000, enableHighAccuracy: true});
+		navigator.geolocation.getCurrentPosition(succes,echec,{maximumAge:1000,timeout: 10000, enableHighAccuracy: true});
 		alert('après l\'appel');
-		" value="cliquer"></input>
+		" value="cliquer">
+</input>
+<input type="button" onclick="alert('tentative de vibration');
+				alert(navigator.vibrate(1000)+'comme retour');
+				console.log('essai');
+				" value="pour vibrer">
+</input>
 
-<input type="button" onclick="alert('tentative de vibration');navigator.vibrate(1000);" value="pour vibrer"></input>
+<a href="carte.html">
+<input type='button' value="voir la carte">
+</input>
+</a>
 
 <script type="text/javascript">
 
-alert("coucou");
 navigator.vibrate(1000);
-navigator.notification.beep(1000);
 
 //en cas de succes de l'activation du GPS :
 var succes=function(position)
@@ -26,6 +49,7 @@ var succes=function(position)
 	alert(position);
 }
 
+//en cas d'échec :
 var echec=function(error)
 {
 	alert('echec de la récupération des coordonnées...');

@@ -92,12 +92,12 @@
   "license": "Apache-2.0",
   "maintainers": [
     {
-      "name": "filmaj",
-      "email": "maj.fil@gmail.com"
-    },
-    {
       "name": "anis",
       "email": "anis.kadri@gmail.com"
+    },
+    {
+      "name": "bowserj",
+      "email": "bowserj@apache.org"
     },
     {
       "name": "brodybits",
@@ -120,8 +120,8 @@
       "email": "erisu.dev@outlook.jp"
     },
     {
-      "name": "bowserj",
-      "email": "bowserj@apache.org"
+      "name": "filmaj",
+      "email": "maj.fil@gmail.com"
     },
     {
       "name": "jcesarmobile",
