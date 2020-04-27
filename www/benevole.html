@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+Crétin de Touc.
+
+<br/>
+
+<input type="button" id="bouton" onclick="
+		alert('bouton cliqué !'+navigator.geolocation);
+		navigator.geolocation.getCurrentPosition(succes,echec,{maximumAge:100000,timeout: 10000, enableHighAccuracy: true});
+		alert('après l\'appel');
+		" value="cliquer"></input>
+
+<input type="button" onclick="alert('tentative de vibration');navigator.vibrate(1000);" value="pour vibrer"></input>
+
+<script type="text/javascript">
+
+alert("coucou");
+navigator.vibrate(1000);
+navigator.notification.beep(1000);
+
+//en cas de succes de l'activation du GPS :
+var succes=function(position)
+{
+	alert('on a la position GPS ! latitude : ');
+	alert(position);
+}
+
+var echec=function(error)
+{
+	alert('echec de la récupération des coordonnées...');
+	alert(error.code);
+	alert('message : '+error.message);
+}
+
+
+document.addEventListener("deviceready",
+function()
+
+{
+	alert("coordonnées GPS a priori prêtes à être utilisées...");
+	navigator.geolocation.getCurrentPosition(succes,echec);
+}
+
+);
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

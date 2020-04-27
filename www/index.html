@@ -1,0 +1,50 @@
+<! DOCTYPE HTML>
+<html>
+<head>
+<title>Connexion ODMF</title>
+<meta charset='utf-8'/>
+</head>
+
+<body>
+	<center>
+	<h1>Code de l'Ordre pour la Virtualisation et l'Intégration de ses Données</h1>
+	<img src="img/blason.png"/>
+	</center>
+	<fieldset>
+	<legend>Connexion à votre compte</legend>
+	<form style="text-align:right" action="mode.html" method="post">
+		<label for="pseudo">adresse mail</label>
+		<input type="email" id="pseudo" required></input>
+		<br/>
+		<label for="mdp">Mot de passe</label>
+		<input type="password" id="mdp"></input>
+		<input type="submit" value="soumettre"></input>
+	</form>
+	</fieldset>
+</body>
+</html>
+
+<script type="text/javascript">
+xhr= new XMLHttpRequest();
+xhr.open('GET',"http://bebertfaitdestrucs.free.fr");
+//xhr.withCredentials = true;
+xhr.send(null);
+
+xhr.addEventListener('loadend',
+function()
+{
+	if(xhr.status===200)
+	{
+		alert(xhr.responseText);
+	}
+}
+);
+</script>
+
+
+
+
+
+
+
+
